@@ -4,6 +4,17 @@ export const CostcoContext = createContext();
 
 function CostcoProvider(props) {
     const [cart, setCart] = useState([]);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [login, setLogin] = useState({});
+    const [online, setOnline] = useState(false)
+    const [userID, setUserID] = useState({})
+
+    useEffect(() => {
+      const rawData = localStorage.getItem("Costco_USER");
+      if (rawData) {
+        setIsLoggedIn(true);
+      }
+    }, []);
 
     const localStorageCart = localStorage.getItem("social-cart");
 
@@ -74,11 +85,9 @@ const deleteCartProduct = (product) => {
   localStorage.setItem("social-cart", JSON.stringify(productItems));
   alert("Do you want to remove product?");
 
-  // window.location.reload(true)
-
 }
 
-    return <CostcoContext.Provider value={{cart, setCart, addToCart, increaseCartQty, decreaseCartQty, deleteCartProduct}}>{props.children}</CostcoContext.Provider>
+    return <CostcoContext.Provider value={{cart, setCart, addToCart, increaseCartQty, decreaseCartQty, deleteCartProduct,isLoggedIn, setIsLoggedIn,online, setOnline, userID, setUserID, login, setLogin }}>{props.children}</CostcoContext.Provider>
 }
 
 export default CostcoProvider;

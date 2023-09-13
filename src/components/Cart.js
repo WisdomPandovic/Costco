@@ -20,6 +20,8 @@ function Cart(){
         }
     }, [cart_product]);
 
+    console.log(cartProduct)
+
 
     return(
         <div>
@@ -40,7 +42,7 @@ function Cart(){
                             ) : (
                                cartProduct.map((productItems) => (
                                 <div className='cart-products' key={productItems._id}>
-                                    <div><img src={"http://159.65.21.42:9000" + productItems.image} alt=""/></div>
+                                    <div><img src={productItems.image} alt=""/></div>
                                     <div className='cart-product-list'>
                                         <h4>{productItems.description}</h4>
                                         <h4>{productItems.name}</h4>
@@ -59,8 +61,6 @@ function Cart(){
                                             </div>
                                         </div>
                                     </div>
-
-                                    <p>$ {productItems.totalPrice}</p>
                                 </div>
                             ))
                         )}

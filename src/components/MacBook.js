@@ -19,19 +19,22 @@ function MacBook(){
     const { _id } = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
-    const {addToCart} = useContext(CostcoContext);
+    const {addToCart, increaseCartQty, decreaseCartQty} = useContext(CostcoContext);
 
     useEffect(() => {
-        fetch("http://159.65.21.42:9000/product/" + _id)
+        fetch("http://localhost:3008/product/" + _id)
         .then((resp) => resp.json())
         .then((data) => {
-            setProduct(data);
+
+            const productWithQty = {...data, qty: 1};
+            setProduct([productWithQty]);
+            // setProduct([data]);
             setLoading(false)
         });
-
         
     },[_id]);
 
+    console.log( product)
     return(
         <div>
             <Nav/>
@@ -114,9 +117,9 @@ function MacBook(){
                             {loading === true ? (
                                 <div className="shop-computer-con1"> Data Loading, please wait</div>
                             ) : (
-                          
+                                product.map((product) => (
                                 <div className="shopMacbook-tocart" key={product._id}>
-                                    <div><img src={"http://159.65.21.42:9000" + product.image} alt="product" /></div>
+                                    <div><img src={ product.image} alt="product" /></div>
                                     <div className="shopMacbook-tocart-text">
                                         <h3>${product.price}</h3>
                                         <h5>{product.name}</h5>
@@ -125,15 +128,15 @@ function MacBook(){
                                             <ul>
                                                 <li>{product.description}</li>
                                                 <li>Quantity: {product.quantity}</li>
-                                                <li>Category: {product.category}</li>
+                                                <li>Category: {product.category.title}</li>
                                             </ul>
                                         </div>
 
                                         <div className="addcart-btn">
                                             <div>
-                                            <button className="addcart-decr">-</button>
-                                            <button className="addcart-num">1</button>
-                                            <button  className="addcart-incr">+</button>
+                                            <button onClick={() => decreaseCartQty(product)} className="addcart-decr">-</button>
+                                            <span className="addcart-num">{product.qty}</span>
+                                            <button onClick={() => increaseCartQty(product)} className="addcart-incr">+</button>
                                             </div>
 
                                             <div className="addcart-btn2">
@@ -144,7 +147,7 @@ function MacBook(){
                                     </div>
 
                                 </div>
-
+                                ))
                             )} 
 
                             <div>
@@ -179,7 +182,7 @@ function MacBook(){
                                             </div>
 
                                             <div className="addcart-btn2">
-                                                <button>Add</button>
+                                                <button onClick={() => addToCart(product)}>Add</button>
                                             </div>
                                         </div>
                                     </div>

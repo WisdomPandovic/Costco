@@ -88,6 +88,9 @@ function Home (){
                     <div className="container3-slide-imgs">
                         <div className="slides">
                             <div><img src={HomeImg3} alt=""/></div>
+                            <div><img src={HomeImg3} alt=""/></div>
+                            <div><img src={HomeImg3} alt=""/></div>
+                            <div><img src={HomeImg3} alt=""/></div>
                         </div>
                     </div>
 
@@ -118,18 +121,22 @@ function Home (){
             <div className="container5">
                 <div className="container5-imgs">
                     <div className="container5-div">
-                <div className="container5-text"><h2>Appliances</h2></div>
-                <div className="container5-imgs-set">
-                <div><img src={HomeCon5Img1} alt=""/>
-                <span>Refridgerator</span></div>
-                <div><img src={HomeCon5Img2}  alt=""/>
-                <span>Laundry</span></div>
-                <div><img src={HomeCon5Img3}  alt=""/>
-                <span>Dishwashers</span></div>
-                <div><img src={HomeCon5Img4}  alt=""/>
-                <span>Rangers</span></div>
-                </div>
-            </div>
+                        <div className="container5-text"><h2>Appliances</h2></div>
+                        <div className="container5-imgs-set">
+                            <div><img src={HomeCon5Img1} alt=""/>
+                                <span>Refridgerator</span>
+                            </div>
+                            <div><img src={HomeCon5Img2}  alt=""/>
+                                <span>Laundry</span>
+                            </div>
+                            <div><img src={HomeCon5Img3}  alt=""/>
+                                <span>Dishwashers</span>
+                            </div>
+                            <div><img src={HomeCon5Img4}  alt=""/>
+                                <span>Rangers</span>
+                            </div>
+                        </div>
+                    </div>
 
             <div className="container5-div">
                 <div className="container5-text"><h2>Electronics</h2></div>
@@ -232,31 +239,31 @@ function Home (){
                 <div className="container9-img">
             <div><img src={HomeCon9Img1} alt=""/>
             <span>$14.99</span>
-            <span><p>
+            <span><p className='span-p'>
 				Jachs Girlfriend Ladies' Short Sleeve Blouse
 			</p></span>
             </div>
             <div><img src={HomeCon9Img2} alt=""/>
             <span>$14.99</span>
-            <span><p>
+            <span><p className='span-p'>
 				IZOD Men’s Flat Front Short
 			</p></span>
             </div>
             <div><img src={HomeCon9Img3} alt=""/>
             <span>$14.99</span>
-            <span><p>
+            <span><p className='span-p'>
 				BCBG Girls Youth Dress & Romper Set
 			</p></span>
             </div>
             <div><img src={HomeCon9Img4} alt=""/>
                 <span>$14.99</span>
-                <span><p>
+                <span><p className='span-p'>
                     Carter's Infant 4-piece Diaper Cover Set, Alligator
                 </p></span>
             </div>
             <div><img src={HomeCon9Img5} alt=""/>
                 <span>$14.99</span>
-                <span><p>
+                <span><p className='span-p'>
                     Briggs Ladies' Tiered Linen Blend Dress
                 </p></span>
             </div>
@@ -269,35 +276,35 @@ function Home (){
             <div><img src={HomeCon9Img6} alt=""/>
             <span>$2599.99</span>
             <span>$2599.99 After $700 0ff</span>
-            <span><p>
+            <span><p className='span-p'>
 				Jachs Girlfriend Ladies' Short Sleeve Blouse
 			</p></span>
             </div>
             <div><img src={HomeCon9Img7} alt=""/>
                 <span>$2599.99</span>
                 <span>$2599.99 After $700 0ff</span>
-            <span><p>
+            <span><p className='span-p'>
 				IZOD Men’s Flat Front Short
 			</p></span>
             </div>
             <div><img src={HomeCon9Img8} alt=""/>
             <span>$999.99</span>
             <span>Item Qualifies for Costco Direct Buy More Save More</span>
-            <span><p>
+            <span><p className='span-p'>
 				BCBG Girls Youth Dress & Romper Set
 			</p></span>
             </div>
             <div><img src={HomeCon9Img9} alt=""/>
                 <span>$2599.99</span>
                 <span>$2599.99 </span>
-                <span><p>
+                <span><p className='span-p'>
                     Carter's Infant 4-piece Diaper Cover Set, Alligator
                 </p></span>
             </div>
             <div><img src={HomeCon9Img10} alt=""/>
                 <span>$2599.99</span>
                 <span>$2599.99 After $700 0ff</span>
-                <span><p>
+                <span><p className='span-p'>
                     Briggs Ladies' Tiered Linen Blend Dress
                 </p></span>
             </div>

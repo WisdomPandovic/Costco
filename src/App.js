@@ -23,7 +23,7 @@ function App() {
                <Route path='/shopcomputer' element={<ShopComputer/>}/>
                <Route path='/shop-apple' element={<ShopApple/>}/>
                <Route path='/macbook/:_id' element={<MacBook/>}/>
-               {/* <Route path='/macbook/' element={<MacBook/>}/> */}
+               <Route path='/macbook/' element={<MacBook/>}/>
                <Route path='/signup' element={<Signup/>}/>
                <Route path='/signin' element={<Signin/>}/>
                <Route path='/cart' element={<Cart/>}/>

@@ -6,42 +6,49 @@ function Footer (){
     return(
         <div>
             <footer>
-            <div className="foot-link-1">
-                <div className="footer-link">
-                <div>
-                    <p>Customer Service</p>
-                    <p>Get Help</p>
-                </div>
+                <div className="foot-link-1">
 
-                <div>
-                    <p>Find a Warehouse</p>
-                    <div><input type="text" placeholder="City, state or zip"/></div>
-                </div>
-
-                <div>
-                    <p>Get Email Offers</p>
-                    <div><input type="text" placeholder="Enter your email"/><button><p>Go</p></button></div>
-                </div>
-
-                <div>
-                    <p>Follow Us</p>
-                    <div className="social-icons">
-                        <div><img src={SocialIcon1} alt=""/></div>
-                        <div><img src={SocialIcon2} alt=""/></div>
-                        <div><img src={SocialIcon3} alt=""/></div>
+                    <div className="footer-link">
+                    <div>
+                        <p>Customer Service</p>
+                        <p>Get Help</p>
                     </div>
+
+                    <div className='fllex'>
+                        <div>
+                            <p>Find a Warehouse</p>
+                            <div><input type="text" placeholder="City, state or zip"/></div>
+                        </div>
+
+                        <div>
+                            <p>Get Email Offers</p>
+                            <div>
+                            <input type="text" placeholder="Enter your email"/>
+                            <button><p>Go</p></button>
+                            </div>
                     
-                </div>
+                        </div>
 
-                <div>
-                    <p>Get the Costco App</p>
-                    <div><img src={SocialIcon4} alt=""/></div>
-                </div>
+                        <div>
+                           <p>Follow Us</p>
+                           <div className="social-icons">
+                                <div><img src={SocialIcon1} alt=""/></div>
+                                <div><img src={SocialIcon2} alt=""/></div>
+                                <div><img src={SocialIcon3} alt=""/></div>
+                            </div>
+                    
+                        </div>
+                    </div>
 
-            </div><hr/>
+                    <div>
+                        <p>Get the Costco App</p>
+                        <div className="social-icons"><img src={SocialIcon4} alt=""/></div>
+                    </div>
 
-            <div className="footer-link-2">
-                <div>
+                    </div><hr/>
+
+                    <div className="footer-link-2">
+                    <div>
                     <h3>About Us</h3>
                     <p>Charitable Contributions</p>
                     <p> Information</p>
@@ -55,9 +62,9 @@ function Footer (){
                     <p>Quick & Easy Recipe Videos</p>
                     <p>Costco Blog</p>
                     <p>Employee Site</p>
-                </div>
+                    </div>
 
-                <div>
+                    <div>
                     <h3>Membership</h3>
                     <p>Charitable Contributions</p>
                     <p> Join Now</p>
@@ -72,9 +79,9 @@ function Footer (){
                     <p>Ethics Hotline for Suppliers</p>
                     <p>Supplier Diversity</p>
                     <p>Explore Our Brands</p>
-                </div>
+                    </div>
 
-                <div>
+                    <div>
                     <h3>Customer Service</h3>
                     <p>Costco Shop Card</p>
                     <p>Balance</p>
@@ -89,9 +96,9 @@ function Footer (){
                     <p>Returns and Exchanges</p>
                     <p>Return Policy</p>
                     <p>Accessibility</p>
-                </div>
+                    </div>
 
-                <div>
+                    <div>
                     <h3>Locations & Services</h3>
                     <p>Costco Shop Card</p>
                     <p>Balance</p>
@@ -106,11 +113,11 @@ function Footer (){
                     <p>Returns and Exchanges</p>
                     <p>Return Policy</p>
                     <p>Accessibility</p>
-                </div>
-            </div><hr/>
+                    </div>
+                    </div><hr/>
 
-            <div className="footer-3">
-                <div className="footer-link-3">
+                    <div className="footer-3">
+                    <div className="footer-link-3">
                     <p>Site Map</p>
                     <p>Terms and Conditions</p>
                     <p>Your Privacy Rights</p>
@@ -118,13 +125,13 @@ function Footer (){
                     <p>Cookie Settings</p>
                     <p>Privacy Choices</p>
                     <p>Feedback</p>
-                </div>
-            </div>
+                    </div>
+                    </div>
 
-            <div className="footer-4">
-                <p>© 1998 — 2023 Costco Wholesale Corporation. All rights reserved.</p>
-            </div>
-            </div>
+                    <div className="footer-4">
+                        <p>© 1998 — 2023 Costco Wholesale Corporation. All rights reserved.</p>
+                    </div>
+                </div>
 
             </footer>
         </div>

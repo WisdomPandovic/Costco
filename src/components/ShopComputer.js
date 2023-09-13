@@ -36,21 +36,41 @@ import { useEffect, useState } from "react";
 
 
 function ShopComputer(){
-
-    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [postsData, setPostsData] = useState();
+    const [macbookProduct, setmacbookProduct] = useState();
 
     useEffect(() => {
-        fetch("http://159.65.21.42:9000/products")
+        fetch("http://localhost:3008/products")
         .then((resp) => resp.json())
         .then((data) => {
-            const filterCategory = data.filter ((prod) => {
-                return prod.category === "Computer-product"
+            console.log(data)
+            const filterTag = data.filter ((product) => {
+                return product.category.title === "iPhone";
             } )
-            setProducts((filterCategory));
+            setPostsData(filterTag);
+            // setPostsData(data);
+            console.log(filterTag)
             setLoading(false)
         });
+        //  console.log(productsData.length)
+        
+    },[]);
 
+    useEffect(() => {
+        fetch("http://localhost:3008/products")
+        .then((resp) => resp.json())
+        .then((data) => {
+            console.log(data)
+            const filterTag = data.filter ((product) => {
+                return product.category.title === "Macbook";
+            } )
+            setmacbookProduct(filterTag);
+            // setPostsData(data);
+            console.log(filterTag)
+            setLoading(false)
+        });
+        //  console.log(productsData.length)
         
     },[]);
     return(
@@ -77,19 +97,43 @@ function ShopComputer(){
                 <div className="shopComputer-con2-link"><Link to=''>View More Computers Categories</Link></div>
             </div>
 
+            <div className="shop-computer-con4">
+                <div className="shop-computer-text"><p>iPhone 14  Product</p></div>
+            </div>
+
             <div className="products">
                 {loading === true ? (
                     <div>Data Loading, please wait....</div>
                 ) : (
-                    products.map((product) => (
+                    postsData.map((product) => (
                         <div key={product._id} className="product-card" >
                             <div className="shopComputer-product">
-                               <img src={"http://159.65.21.42:9000" + product.image} alt="product" />
-                               <h2>{product.name}</h2>
-                               <p>$ {product.price}</p>
-                               <p>{product.quantity}</p>
-                               <p>{product.description}</p>
-                               <Link to={`/macbook/${product._id}`}>View More</Link>
+                            <Link to={`/macbook/${product._id}`}>
+                               <img src={ product.image} alt="product" />
+                               <p>{product.name}</p>
+                              </Link>
+                            </div>
+                        </div>
+        
+                       ))
+                )}
+            </div>
+
+            <div className="shop-computer-con4">
+                <div className="shop-computer-text"><p>Macbook Product</p></div>
+            </div>
+
+            <div className="products">
+                {loading === true ? (
+                    <div>Data Loading, please wait....</div>
+                ) : (
+                    macbookProduct.map((product) => (
+                        <div key={product._id} className="product-card" >
+                            <div className="shopComputer-product">
+                            <Link to={`/macbook/${product._id}`}>
+                               <img src={ product.image} alt="product" />
+                               <p>{product.name}</p>
+                              </Link>
                             </div>
                         </div>
         

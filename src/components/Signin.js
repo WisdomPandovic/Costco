@@ -1,10 +1,12 @@
 import Logo2 from '../images/costcoLogoIdentityIntro@3x.png';
 import {Link} from 'react-router-dom';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import { CostcoContext } from './Context/CostcoContext';
 
 function Signin(){
+    const { setUserID, setOnline,} = useContext(CostcoContext)
     const navigate = useNavigate()
     const [err, setErr] = useState(false);
     const [user, setUser] = useState({
@@ -18,17 +20,31 @@ function Signin(){
         if ( user.email ==="" || user.password ==="" ){
           setErr(true);
         }else {
-            axios.post("http://159.65.21.42:9000/login", login)
-                  .then((resp) => {
-                       if(resp.data.error){
-                        alert(resp.data.error)
-                       }else {
-                        alert ("Successful logged in")
-                        navigate("/");
-                    }
-                  })
-
-                  .catch((error) => console.log(error));
+            axios.post("http://localhost:3008/login", login)
+            .then((resp) => {
+                console.log(resp.data)
+                if(resp.data.msg === 'Login successful'){
+                    console.log(resp.data);
+                localStorage.setItem('Costco_USER', JSON.stringify(resp.data))
+                setOnline(true)
+                let rawData = localStorage.getItem("Costco_USER")
+                let localData = JSON.parse(rawData)
+        
+                setUserID(localData)
+                setUser({
+                    ...user,
+                    lastLogin: new Date(localData.lastLogin).toLocaleString(),
+                });
+               
+                    alert("successfully logged in")
+                    // toast.success("successfully logged in");
+                    navigate("/");
+                }else{
+                    alert("invalid user please signup..")
+                    
+                }
+             
+            })
             
         }
      };
@@ -37,39 +53,42 @@ function Signin(){
         <div>
             <nav className="signup-nav-logo">
                 <div className="signup-nav">
-                    <div ><img className="logo2" src={Logo2} alt=""/></div>
+                    <div ><Link to='/' ><img className="logo2" src={Logo2} alt=""/></Link></div>
 
                 </div>
             </nav>
 
             <div className="create-acct"><p>Sign In</p></div>
+            <div className='signin-form'>
             <form onSubmit={submitForm}>
         
                 <div className="form-data">
             
                     <div><input type="text" value={user.email} onChange={(e) => setUser({...user, email: e.target.value})} placeholder="Email Address"/></div>
-                    {err === true && user.email === "" ? <span>Email required</span> : null}
+                    {err === true && user.email === "" ? <span className='span'>Email required</span> : null}
 
                     <div><input type="text" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} placeholder="Password"/></div>
-                    {err === true && user.password === "" ? <span>password required</span> : null}
+                    {err === true && user.password === "" ? <span className='span'>password required</span> : null}
             
                     <div><Link to=''><p>Forgot Password?</p></Link></div>
                     <div className="consent"> 
-                        <div></div><input type="checkbox" className="checked"/><div>
-
+                        <input type="checkbox" className="checked"/>
+                        <p className="signup-p3">Keep me signed in</p>
                     </div>
-                    <div><p className="signup-p3">Keep me signed in</p></div>
+                 
+                    
                 
-                </div>
+               
 
-                <div>Check this box only when on a private device.</div>
+                <div className="signup-p4">Check this box only when on a private device.</div>
         
 
                 <div className="signup-btn"><button>Sign In</button></div>
-                <div><p>New to Costco?</p></div>
-                <div className="signup-btn2"><button>Create Account</button></div>
+                <div><p className="signup-p3">New to Costco?</p></div>
                 </div>
             </form>
+            <div className="signup-btn2"><button><Link to='/signup' className="menu-text"><p>Create Account</p></Link></button></div>
+            </div>
         </div>
 
         
