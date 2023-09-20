@@ -5,6 +5,10 @@ import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import { CostcoContext } from './Context/CostcoContext';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 function Signin(){
     const { setUserID, setOnline,} = useContext(CostcoContext)
     const navigate = useNavigate()
@@ -36,11 +40,12 @@ function Signin(){
                     lastLogin: new Date(localData.lastLogin).toLocaleString(),
                 });
                
-                    alert("successfully logged in")
-                    // toast.success("successfully logged in");
+                    // alert("successfully logged in")
+                    toast.success("successfully logged in");
                     navigate("/");
                 }else{
-                    alert("invalid user please signup..")
+                    // alert("invalid user please signup..")
+                    toast.error("invalid user please signup..");
                     
                 }
              
@@ -89,6 +94,7 @@ function Signin(){
             </form>
             <div className="signup-btn2"><button><Link to='/signup' className="menu-text"><p>Create Account</p></Link></button></div>
             </div>
+            <ToastContainer />
         </div>
 
         

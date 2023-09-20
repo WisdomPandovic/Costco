@@ -3,6 +3,9 @@ import Logo2 from '../images/costcoLogoIdentityIntro@3x.png';
 import { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import axios from "axios";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function Signup(){
     const navigate = useNavigate();
@@ -34,13 +37,15 @@ function Signup(){
             .then((resp) => {
                 console.log(resp.data)
                 setErr(false);
-                alert("Sign up successful.");
+                // alert("Sign up successful.");
+                toast.success("Sign up successful.");
                 navigate("/signin");
             
             })
             .catch((error) => {
                 console.error(error);
-                alert("Sign up unsuccessful. Please try again.");
+                // alert("Sign up unsuccessful. Please try again.");
+                toast.error("Sign up unsuccessful. Please try again.");
             });
             setUser({
                 name: "",

@@ -5,13 +5,12 @@ import {useState, useEffect, useContext} from "react" ;
 import { CostcoContext } from "./Context/CostcoContext";
 import Checkout from './pages/Checkout';
 function Cart(){
-    const{cart}= useContext(CostcoContext);
-    
     let cart_product = localStorage.getItem("social-cart");
     const [cartProduct, setCartProduct] = useState([]);
     const [err, setErr] = useState(true);
+    const [isRemove, setIsRemove] = useState(false);
 
-    const {increaseCartQty, decreaseCartQty, deleteCartProduct} = useContext(CostcoContext);
+    const {cart,increaseCartQty, decreaseCartQty, deleteCartProduct} = useContext(CostcoContext);
 
     useEffect (() => {
         if (cart_product){
@@ -21,8 +20,7 @@ function Cart(){
     }, [cart_product]);
 
     console.log(cartProduct)
-
-
+    
     return(
         <div>
             <Nav/>
@@ -48,6 +46,7 @@ function Cart(){
                                         <h4>{productItems.name}</h4>
                                         <p>$ {productItems.price}</p>
                                         <p>{productItems.quantity}</p>
+                                        {/* <p>{productItems.qty}</p> */}
 
                                         <div className="addcart-btn">
                                             <div>
@@ -57,9 +56,24 @@ function Cart(){
                                             </div>
 
                                             <div >
-                                                <button  onClick={ () => deleteCartProduct(productItems) }>Remove</button>
+                                                <button onClick={() => setIsRemove(true)} >Remove</button>
                                             </div>
                                         </div>
+                                                {isRemove && (
+                                                    <div className='remove-popup'>
+
+                                                        <div className=''>
+                                                           <p>"Do you want to remove product?"</p>
+                                                           <div className='remove-popups'>
+                                                                <button  onClick={ () => deleteCartProduct(productItems) }>yes</button>
+                                                                <button  onClick={() => setIsRemove(false)} className='popup-welcome'>No</button >
+                                                            </div>
+                                                        </div>
+                   
+                                                    </div>
+                                                )}
+                                            
+                                        
                                     </div>
                                 </div>
                             ))
@@ -80,7 +94,7 @@ function Cart(){
                     
                         </div>
 
-                        <Checkout/>
+                        <Checkout product={cartProduct} />
                     </div>
                 
                 </div>

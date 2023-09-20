@@ -14,6 +14,10 @@ import { useState, useEffect, useContext } from "react";
 import {useParams} from "react-router-dom";
 import { CostcoContext } from "./Context/CostcoContext";
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 function MacBook(){
     
     const { _id } = useParams();
@@ -35,6 +39,7 @@ function MacBook(){
     },[_id]);
 
     console.log( product)
+      
     return(
         <div>
             <Nav/>
@@ -353,6 +358,7 @@ function MacBook(){
                     
                 </div>
             </div>
+            <ToastContainer />
             <Footer/>
 
         </div>

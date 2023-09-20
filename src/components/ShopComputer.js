@@ -123,7 +123,7 @@ function ShopComputer(){
                 <div className="shop-computer-text"><p>Macbook Product</p></div>
             </div>
 
-            <div className="products">
+            {/* <div className="products">
                 {loading === true ? (
                     <div>Data Loading, please wait....</div>
                 ) : (
@@ -139,7 +139,7 @@ function ShopComputer(){
         
                        ))
                 )}
-            </div>
+            </div> */}
 
             <div className="shop-computer-con3">
                 <div className="shopComputer-con3">

@@ -1,4 +1,6 @@
 import { useState, createContext, useEffect } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CostcoContext = createContext();
 
@@ -9,10 +11,14 @@ function CostcoProvider(props) {
     const [online, setOnline] = useState(false)
     const [userID, setUserID] = useState({})
 
+    console.log(userID)
+
     useEffect(() => {
       const rawData = localStorage.getItem("Costco_USER");
       if (rawData) {
         setIsLoggedIn(true);
+        let localData = JSON.parse(rawData)
+        setUserID(localData)
       }
     }, []);
 
@@ -32,10 +38,12 @@ function CostcoProvider(props) {
         return data._id === product._id;
     });
     if (checkDataExist) {
-        alert("Product in cart");
+        // alert("Product in cart");
+        toast.success("Product in cart");
         return;
     }
-    alert("product added to cart");
+    // alert("product added to cart");
+    toast.success("product added to cart");
    let newProduct = {...product, qty:1, totalPrice: product.price};
    cartData.push(newProduct);
     setCart(cartData);
@@ -83,11 +91,12 @@ const deleteCartProduct = (product) => {
   });
   setCart(productItems);
   localStorage.setItem("social-cart", JSON.stringify(productItems));
-  alert("Do you want to remove product?");
+  // alert("Do you want to remove product?");
 
 }
 
-    return <CostcoContext.Provider value={{cart, setCart, addToCart, increaseCartQty, decreaseCartQty, deleteCartProduct,isLoggedIn, setIsLoggedIn,online, setOnline, userID, setUserID, login, setLogin }}>{props.children}</CostcoContext.Provider>
+
+    return <CostcoContext.Provider value={{cart, setCart, addToCart, increaseCartQty, decreaseCartQty, deleteCartProduct,isLoggedIn, setIsLoggedIn,online, setOnline, userID, setUserID, login, setLogin, }}>{props.children}</CostcoContext.Provider>
 }
 
 export default CostcoProvider;

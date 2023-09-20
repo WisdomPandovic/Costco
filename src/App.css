@@ -34,6 +34,16 @@
   color: whitesmoke;
 }
 
+.modal-content{
+  padding: 10px 0px;
+}
+
+.modal-content button{
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+}
+
 .menu1-text {
   border-right: 1px solid black;
   height: 40px;
@@ -103,6 +113,33 @@
 .logo{
  width: 180px;
  height: 50px;
+}
+
+.remove-popup{
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 100;
+  width: 300px; 
+  height: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  color: #fff; 
+  background-color: transparent;
+}
+
+.remove-popup p{
+  color: red;
+}
+
+.remove-popups{
+  display: flex;
+  gap: 20px;
+  margin: 10px 50px;
+}
+
+.remove-popups button{
+  padding: 20px;
 }
 
 .popup{
@@ -1442,6 +1479,13 @@ input{
   background-color: green;
   color: #fff;
   cursor: pointer;
+}
+
+.checkout-btn button{
+  background-color: green;
+  color: #fff;
+  cursor: pointer;
+  border: none;
 }
 
 .credit-img{
