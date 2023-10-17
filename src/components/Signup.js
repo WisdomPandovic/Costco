@@ -70,7 +70,7 @@ function Signup(){
             <div className='signin-form'>
             <form onSubmit={submitForm}>
         
-            <div className="form-data">
+                <div className="form-data">
 
             <div><input type="text" value={user.name} onChange={(e) => setUser({...user, name: e.target.value})} placeholder="Name"/></div>
             {err === true && user.name === "" ? <span className='span'>Name required</span> : null}
@@ -99,9 +99,19 @@ function Signup(){
         
 
             <div className="signup-btn"><button>Create Account</button></div>
-           </div>
+                </div>
            </form>
            </div>
+
+           <nav className="signup-nav-logo">
+                <div className="signup-nav">
+                    <div className='signup-nav-flex'>
+                        <p>Terms and Conditions</p>
+                        <p>Privacy Rights</p>
+                    </div>
+                    <p>© 1998 — 2023 Costco Wholesale Corporation. All rights reserved.</p>
+                </div>
+            </nav>
         </div>
     )
 }

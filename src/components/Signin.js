@@ -94,6 +94,16 @@ function Signin(){
             </form>
             <div className="signup-btn2"><button><Link to='/signup' className="menu-text"><p>Create Account</p></Link></button></div>
             </div>
+
+            <nav className="signup-nav-logo">
+                <div className="signup-nav">
+                    <div className='signup-nav-flex'>
+                        <p>Terms and Conditions</p>
+                        <p>Privacy Rights</p>
+                    </div>
+                    <p>© 1998 — 2023 Costco Wholesale Corporation. All rights reserved.</p>
+                </div>
+            </nav>
             <ToastContainer />
         </div>
 
