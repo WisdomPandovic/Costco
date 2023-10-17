@@ -1716,7 +1716,7 @@ input:checked ~ .hide_nav_container {
     width: 95%;
     margin: auto;
   }
-  
+
 .first_nav, .container3, .main_nav{
   display: none;
 }
@@ -1943,6 +1943,12 @@ input:checked ~ .hide_nav_container {
 .container5-div{
   width: 95%;
   margin: auto;
+}
+
+.signin-form{
+  width: 95%;
+  margin: auto;
+  border: 1px solid black;
 }
 
 }
