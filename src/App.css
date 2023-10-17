@@ -1634,7 +1634,7 @@ input:checked ~ .hide_nav_container {
 }
 
 .hamb-flex input{
-  width: 310px;
+  width: 210px;
   height: 30px;
   padding: 10px;
   border-color: #0073a6;
