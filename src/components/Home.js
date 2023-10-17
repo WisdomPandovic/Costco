@@ -219,10 +219,11 @@ function Home (){
 
             <div className="container8">
                 <div className="container8-img">
-            <div><img src={HomeCon8Img1} alt=""/>
-            <span>Available in-Warehouse & Online</span></div>
-            <div><img src={HomeCon8Img2} alt=""/>
-            <span>LIMIT VARIES</span></div>
+                    <div><img src={HomeCon8Img1} alt=""/>
+                        <span>Available in-Warehouse & Online</span>
+                    </div>
+                    <div><img src={HomeCon8Img2} alt=""/>
+                    <span>LIMIT VARIES</span></div>
             <div><img src={HomeCon8Img3} alt=""/>
             <span>LIMIT 10 EACH</span></div>
             <div><img src={HomeCon8Img4} alt=""/>

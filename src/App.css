@@ -1922,6 +1922,13 @@ input:checked ~ .hide_nav_container {
   margin: auto; 
 }
 
+.container8-img{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 20px 0px;
+  gap: 20px;
+}
+
 }
 
 @media (min-width: 721px) {
