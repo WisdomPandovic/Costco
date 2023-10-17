@@ -81,22 +81,22 @@ function MacBook(){
                            <div><img src={MacBookimg1} alt=""/></div>
                         </div> 
 
-                        <div >
+                        <div className="wdth-95" >
                             <div className="shopModel"><p>Shop By Model</p></div>
                             <div className="shopMacbook-shopModel">
-                                <div><img src={MacBookimg3} alt=""/>
-                                <p>MacBook Pro 16"</p>
+                                <div className="shopMacbook-shopModel-bd"><img src={MacBookimg3} alt=""/>
+                                    <p>MacBook Pro 16"</p>
                                 </div>
-                                <div><img src={MacBookimg4} alt=""/>
+                                <div className="shopMacbook-shopModel-bd"><img src={MacBookimg4} alt=""/>
                                 <p>MacBook Pro 14"</p>
                                 </div>
-                                <div><img src={MacBookimg5} alt=""/>
+                                <div className="shopMacbook-shopModel-bd"><img src={MacBookimg5} alt=""/>
                                 <p>MacBook Air 13"</p>
                                 </div>
-                                <div><img src={MacBookimg6} alt=""/>
+                                <div className="shopMacbook-shopModel-bd"><img src={MacBookimg6} alt=""/>
                                 <p>MacBook Pro 13"</p>
                                 </div>
-                                <div><img src={MacBookimg7} alt=""/>
+                                <div className="shopMacbook-shopModel-bd"><img src={MacBookimg7} alt=""/>
                                 <p>Compare MacBook Models</p>
                                 </div>
 
@@ -138,7 +138,7 @@ function MacBook(){
                                         </div>
 
                                         <div className="addcart-btn">
-                                            <div>
+                                            <div className="grid-3">
                                             <button onClick={() => decreaseCartQty(product)} className="addcart-decr">-</button>
                                             <span className="addcart-num">{product.qty}</span>
                                             <button onClick={() => increaseCartQty(product)} className="addcart-incr">+</button>
@@ -180,10 +180,10 @@ function MacBook(){
                                         </div>
 
                                         <div className="addcart-btn">
-                                            <div>
-                                            <button className="addcart-decr">-</button>
-                                            <button className="addcart-num">1</button>
-                                            <button className="addcart-incr">+</button>
+                                            <div className="grid-3">
+                                               <button className="addcart-decr">-</button>
+                                               <button className="addcart-num">1</button>
+                                               <button className="addcart-incr">+</button>
                                             </div>
 
                                             <div className="addcart-btn2">
@@ -220,7 +220,7 @@ function MacBook(){
                                         </div>
 
                                         <div className="addcart-btn">
-                                            <div>
+                                            <div className="grid-3">
                                             <button className="addcart-decr">-</button>
                                             <button className="addcart-num">1</button>
                                             <button className="addcart-incr">+</button>
@@ -260,7 +260,7 @@ function MacBook(){
                                         </div>
 
                                         <div className="addcart-btn">
-                                            <div>
+                                            <div className="grid-3">
                                             <button className="addcart-decr">-</button>
                                             <button className="addcart-num">1</button>
                                             <button className="addcart-incr">+</button>
@@ -300,7 +300,7 @@ function MacBook(){
                                         </div>
 
                                         <div className="addcart-btn">
-                                            <div>
+                                            <div className="grid-3">
                                             <button className="addcart-decr">-</button>
                                             <button className="addcart-num">1</button>
                                             <button className="addcart-incr">+</button>
@@ -340,7 +340,7 @@ function MacBook(){
                                         </div>
 
                                         <div className="addcart-btn">
-                                            <div>
+                                            <div className="grid-3">
                                             <button className="addcart-decr">-</button>
                                             <button className="addcart-num">1</button>
                                             <button className="addcart-incr">+</button>

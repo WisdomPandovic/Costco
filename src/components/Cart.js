@@ -49,7 +49,7 @@ function Cart(){
                                         {/* <p>{productItems.qty}</p> */}
 
                                         <div className="addcart-btn">
-                                            <div>
+                                            <div className='marg'>
                                                 <button onClick={() => decreaseCartQty(productItems)} className="addcart-decr">-</button>
                                                 <span className="addcart-num">{productItems.qty}</span>
                                                 <button onClick={() => increaseCartQty(productItems)} className="addcart-incr">+</button>

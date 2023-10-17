@@ -2,6 +2,7 @@ import SocialIcon1 from '../images/social-facebook.svg';
 import SocialIcon2 from '../images/social-pinterest.svg';
 import SocialIcon3 from '../images/social-instagram.svg';
 import SocialIcon4 from '../images/app-icon.png';
+import {AiOutlinePlus} from 'react-icons/ai';
 function Footer (){
     return(
         <div>
@@ -116,6 +117,43 @@ function Footer (){
                     </div>
                     </div><hr/>
 
+                    <div className='wdth-95 ds-n'>
+                        <div className='wdth-95-mgs'>
+                            <p >Get Email Offers</p>
+                            <input type="text" placeholder="Enter your email" />
+                        </div><hr/>
+                        
+                    </div>
+
+                    <div className='wdth-95 ds-n'>
+                        <div className='wdth-95-mg'>
+                            <div className='flex'>
+                                <p>About Us</p>
+                                <p><AiOutlinePlus className=' black'/></p>
+                            </div><hr/>
+                            <div className='flex'>
+                                <p>Membership</p>
+                                <p><AiOutlinePlus className=' black'/></p>
+                            </div><hr/>
+                            <div className='flex'>
+                                <p>Vendors & Suppliers</p>
+                                <p><AiOutlinePlus className=' black'/></p>
+                            </div><hr/>
+                            <div className='flex'>
+                                <p>Customer Service</p>
+                                <p><AiOutlinePlus className=' black'/></p>
+                            </div><hr/>
+                            <div className='flex'>
+                                <p>Location & Service</p>
+                                <p><AiOutlinePlus className=' black'/></p>
+                            </div><hr/>
+                            <div className='flex'>
+                                <p>United States</p>
+                                <p><AiOutlinePlus className=' black'/></p>
+                            </div><hr/>
+                        </div>
+                    </div>
+
                     <div className="footer-3">
                     <div className="footer-link-3">
                     <p>Site Map</p>
@@ -126,6 +164,18 @@ function Footer (){
                     <p>Privacy Choices</p>
                     <p>Feedback</p>
                     </div>
+                    </div>
+
+                    <div className='mv-fotter-icon'>
+                        <div>
+                            <div className="social-icons">
+                                <div><img src={SocialIcon1} alt=""/></div>
+                                <div><img src={SocialIcon2} alt=""/></div>
+                                <div><img src={SocialIcon3} alt=""/></div>
+                                <div ><img src={SocialIcon4} alt=""/></div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div className="footer-4">

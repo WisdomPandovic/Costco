@@ -17,6 +17,7 @@ import {ImPaypal} from 'react-icons/im';
 import {GoSignOut} from 'react-icons/go';
 import { useContext, useEffect, useState } from 'react';
 import { CostcoContext } from './Context/CostcoContext';
+import {ImUser} from 'react-icons/im';
 
 function Nav(){
      const{cart, isLoggedIn, setIsLoggedIn}= useContext(CostcoContext);
@@ -440,6 +441,65 @@ function Nav(){
             <div><Link to=''>Locations</Link ></div>
         </div>
             </header>
+
+            <div className='mv-nav'>
+                <div className='mv-nav-flex'>
+                    <div > <Link to='/' ><img className="logo" src={Logo} alt="" /></Link></div>
+                    <div className='flex blue'>
+                        <div>
+                            <MdLocationPin/>
+                            <p> Warehouses</p>
+                        </div>
+
+                        <div>
+                            <ImUser className='popup-icon black' />
+                            <p> Account</p>
+                        </div>
+                        
+                        <div>
+                            {/* {cart.length}<FaShoppingCart /> */}
+                            <Link to="/cart"> <div >{cart.length}<FaShoppingCart className=' black'/></div></Link>
+                            <p>Cart</p>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <div className='hamb-flex'>
+                    <div class="hamburger_container mg">
+                        <label for="menu_check">&#9776;Shop</label> 
+                        <input type="checkbox" id="menu_check" />
+                        <div class="hide_nav_container"><br/>
+                            <nav>
+                                <ul>
+                                    
+                                   <li><Link to="/shopcomputer">Shop</Link></li>
+                                   <li><Link to="/shopcomputer" className='hamburger-link'>Grocery</Link></li>
+                                   <li><Link to="/shopcomputer" className='hamburger-link'>Same Deal</Link></li>
+                                   <li><Link to="/shopcomputer">Deals</Link></li>
+                                   <li><Link to="/shopcomputer">Bussiness Delivery</Link></li>
+                                   <li><Link to="/shopcomputer">Optical</Link></li>
+                                   <li> <Link to="/shopcomputer">Pharmacy</Link></li>
+                                   <li><Link to="/shopcomputer">Services</Link></li>
+                                   <li><Link to="/shopcomputer">Travel</Link></li>
+                                   <li><Link to="/shopcomputer">Photo</Link></li>
+                                   <li><Link to="/shopcomputer">Membership</Link></li>
+                                   <li><Link to="/shopcomputer">Locations</Link></li>
+
+                                </ul>
+                        
+                 
+
+                            </nav>   
+                
+                        </div>  
+                   
+                    </div>
+                    <div><input type="text" placeholder="Search" /></div>
+                </div>
+
+                
+            </div>
 
             <div className="delivery_route">
             <div className="flex">

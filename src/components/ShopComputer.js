@@ -86,13 +86,13 @@ function ShopComputer(){
             <div className="shop-computer-con2">
                 <div><p>Computers</p></div>
                 <div className="shopComputer-con2">
-            <button>Apple</button>
-            <button>Laptop Computers</button>
-            <button>Desktop & All in one Computer</button>
-            <button>PC Gaming</button>
-            <button>Routers, Wifi Extenders & Modems</button>
-            <button>Monitors</button>
-            <button>Tablets</button>
+                    <button>Apple</button>
+                    <button>Laptop Computers</button>
+                    <button>Desktop & All in one Computer</button>
+                    <button>PC Gaming</button>
+                    <button>Routers, Wifi Extenders & Modems</button>
+                    <button>Monitors</button>
+                    <button>Tablets</button>
                 </div>
                 <div className="shopComputer-con2-link"><Link to=''>View More Computers Categories</Link></div>
             </div>
