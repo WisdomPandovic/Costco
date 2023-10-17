@@ -1929,6 +1929,17 @@ input:checked ~ .hide_nav_container {
   gap: 20px;
 }
 
+.container7-img{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 20px 0px;
+}
+
+.container5-div{
+  width: 95%;
+  margin: auto;
+}
+
 }
 
 @media (min-width: 721px) {
