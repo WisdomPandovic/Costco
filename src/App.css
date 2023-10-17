@@ -1712,6 +1712,11 @@ input:checked ~ .hide_nav_container {
 }
 
 @media (max-width: 720px) {
+  body{
+    width: 95%;
+    margin: auto;
+  }
+  
 .first_nav, .container3, .main_nav{
   display: none;
 }
