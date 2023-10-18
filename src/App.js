@@ -9,9 +9,7 @@ import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Cart from './components/Cart';
 import CostcoProvider from "./components/Context/CostcoContext"
-
-
-
+import MyAccount from './components/MyAccount';
 
 function App() {
 
@@ -27,6 +25,7 @@ function App() {
                <Route path='/signup' element={<Signup/>}/>
                <Route path='/signin' element={<Signin/>}/>
                <Route path='/cart' element={<Cart/>}/>
+               <Route path='/myaccount' element={<MyAccount/>}/>
           </Routes>
       </BrowserRouter>
       </CostcoProvider>

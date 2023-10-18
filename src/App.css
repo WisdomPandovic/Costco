@@ -1731,6 +1731,7 @@ input:checked ~ .hide_nav_container {
 
 .mv-nav{
   display:  content;
+  background-color: whitesmoke;
 }
 
 .mv-nav-flex{
@@ -1983,10 +1984,52 @@ body .signup-nav-logo{
   width:100%;
 }
 
+.menu1-text {
+  border-right: none;
+}
+
+.myaccount{
+  background-color: #fff;
+}
+.myaccount p{
+  margin: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+}
+
+.popup:hover p{
+  color: #0d0900;
+}
+
+.myaccount .flex{
+  margin: 15px 20px 15px 15px;
+  cursor: pointer;
+}
+
+.flex .p-1, .p-2, span{
+  display: none;
+}
+
+.delivery_route{
+  display: none;
+}
+
+.mv-delivery_route{
+  width: 98%;
+  margin: auto;
+  padding: 15px 0px;
+}
+
+.flex-mv{
+  display: flex;
+  gap: 100px;
+}
+
 }
 
 @media (min-width: 721px) {
-  .hamb-flex, .mv-nav, .mv-fotter-icon{
+  .hamb-flex, .mv-nav, .mv-fotter-icon, .mv-delivery_route{
     display: none;
   }
   

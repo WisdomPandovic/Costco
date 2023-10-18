@@ -77,11 +77,11 @@ function Nav(){
                             </div>
 
                             {isOpen && (
-                <div className='popup'>
-                    <div className='flex'>
-                        <div className='popup-welcome'>Welcome!</div>
-                        <div onClick={() => setIsOpen(false)} className='popup-welcome'>X</div>
-                    </div><hr></hr>
+                            <div className='popup'>
+                          <div className='flex'>
+                          <div className='popup-welcome'>Welcome!</div>
+                          <div onClick={() => setIsOpen(false)} className='popup-welcome'>X</div>
+                          </div><hr></hr>
 
                    <div className='popup-link'>
                        <p><RiAccountCircleLine className='popup-icon' />Account Home</p><hr></hr>
@@ -97,7 +97,7 @@ function Nav(){
                        <p onClick={handleLogout}><GoSignOut className='popup-icon'/>Sign Out</p>
                    </div>
                    
-                </div>
+                            </div>
                             )}
                         </div>
                         ) : (
@@ -445,24 +445,49 @@ function Nav(){
             <div className='mv-nav'>
                 <div className='mv-nav-flex'>
                     <div > <Link to='/' ><img className="logo" src={Logo} alt="" /></Link></div>
-                    <div className='flex blue'>
-                        <div>
+                    {isLoggedIn ? (
+                        <div className='flex blue'>
+                 
+                           <div>
                             <MdLocationPin/>
                             <p> Warehouses</p>
-                        </div>
+                           </div>
 
-                        <div>
+                           <div>
                             <ImUser className='popup-icon black' />
-                            <p> Account</p>
-                        </div>
+                            <Link to='/myaccount' className="menu1-text"><p >Account</p></Link>
+                           </div>
                         
-                        <div>
+                           <div>
                             {/* {cart.length}<FaShoppingCart /> */}
                             <Link to="/cart"> <div >{cart.length}<FaShoppingCart className=' black'/></div></Link>
                             <p>Cart</p>
-                        </div>
+                           </div>
+                        
                        
-                    </div>
+                        </div>
+                       ) : (
+                        <div className='flex blue'>
+                 
+                           <div>
+                                <MdLocationPin/>
+                                <p> Warehouses</p>
+                            </div>
+
+                            <div>
+                                <ImUser className='popup-icon black' />
+                                <Link to='/signin' className="menu1-text"><p >Sign in / Register</p></Link>
+                            </div>
+                        
+                            <div>
+                                <Link to="/cart"> <div >{cart.length}<FaShoppingCart className=' black'/></div></Link>
+                                <p>Cart</p>
+                            </div>
+                        
+                       
+                        </div>
+                       )
+                    }
                 </div>
 
                 <div className='hamb-flex'>
@@ -527,6 +552,30 @@ function Nav(){
                 <div className='p-2'>Reorder</div>
             </div>
             </div>
+            </div><hr></hr>
+
+            <div className="mv-delivery_route">
+           
+            <div className="flex-mv">
+                <div>
+                    <div className='css-1ucojbm'>My Warehouse</div>
+                    <div className='css-6ny8wu '>
+                        <h3><MdLocationPin/></h3> 
+                        <h4>Seattle</h4>
+                    </div>
+                </div>
+
+                <div>
+                    <div className='css-1ucojbm'>Delivery Location</div>
+                    <div className='css-6ny8wu'> 
+                        <h3><BsBoxSeam/> </h3>
+                        <h4>98101</h4>
+                    </div>
+                </div>
+            </div>
+
+           
+          
             </div><hr></hr>
             
         </div>
