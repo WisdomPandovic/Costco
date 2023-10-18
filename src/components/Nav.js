@@ -476,7 +476,7 @@ function Nav(){
 
                             <div>
                                 <ImUser className='popup-icon black' />
-                                <Link to='/signin' className="menu1-text"><p >Sign in / Register</p></Link>
+                                <Link to='/signin' className="menu1-text"><p >Account</p></Link>
                             </div>
                         
                             <div>

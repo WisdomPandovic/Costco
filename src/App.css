@@ -1719,6 +1719,8 @@ input:checked ~ .hide_nav_container {
   align-items: center;
 }
 
+
+
 @media (max-width: 720px) {
   body{
     width: 95%;
