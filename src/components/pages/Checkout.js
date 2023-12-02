@@ -2,6 +2,10 @@ import { useState, useEffect, useContext } from "react";
 import { CostcoContext } from "../Context/CostcoContext";
 import SuccessModal from './SuccessModal';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 function Checkout(props) {
   const { product } = props;
   const cart_product = localStorage.getItem("social-cart");
@@ -55,6 +59,8 @@ function Checkout(props) {
   
       await Promise.all(cartRequests);
       setShowModal(true);
+
+      toast.success("Checkout successful!");
   
       localStorage.removeItem('social-cart');
 
@@ -101,6 +107,7 @@ function Checkout(props) {
           {showModal && <SuccessModal onClose={closeModal} />}
         </div>
       )}
+       <ToastContainer />
     </div>
   );
 }
