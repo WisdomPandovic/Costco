@@ -2,6 +2,9 @@
 
 A web application for browsing and purchasing products from Costco.
 
+## Live Demo
+You can view the live demo of the Costco website [here](https://costco-project-eta.vercel.app).
+
 ## Installation
 
 1. Clone the repository to your local machine.
@@ -29,4 +32,4 @@ If you'd like to contribute to this project, please follow the steps outlined in
 
 ## License
 
-This project is licensed under the [License Name](LICENSE) - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT](LICENSE) 
